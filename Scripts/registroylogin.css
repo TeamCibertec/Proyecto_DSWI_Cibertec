@@ -1,0 +1,31 @@
+.car {
+    
+    position: relative;
+      align-content: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      margin-top: 70px;
+      padding: 15px;
+  text-align: center;
+  
+  
+  
+  }
+
+  .carritab
+{
+width:100%;
+align-content:center;
+margin-left:300px;
+
+
+}
+  .carrite nav{
+
+    border-radius: 50px 0px 50px 0px;
+    height: auto;
+  }
+
+
+

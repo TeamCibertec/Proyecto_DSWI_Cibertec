@@ -1,0 +1,88 @@
+
+.carrit {
+
+    position: relative;
+      align-content: center;
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      margin-top: 70px;
+      padding: 15px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.37);
+  
+  }
+.carrit nav{
+    width: auto;
+   
+}
+
+.carrit a{
+width: 223.2px;
+font-size: 20px;
+margin: 0;
+
+
+
+}
+.carrit  a.active {
+    background-color: lavender;
+}
+
+
+.carritab{
+    margin: 0;
+    width:auto;
+    
+}
+.carritab .tab-content{
+    background-color: rgba(0, 0, 0, 0.178);
+    height: auto;
+    border-radius:50px ;
+   align-items: center;
+   text-align: center;
+   align-content: center;
+}
+
+
+.tablacarri {
+    margin: 0;
+  height: 300px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+.tablacarri table{
+    height: 300px;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 20px;
+}
+.ta button{
+
+font-size: 25px;
+
+}
+
+
+footer{
+    position:initial;
+}
+
+.scroll{
+    background-color: white;
+    border-radius: 50px;
+    width: 50%;
+    align-content: center;
+    margin-left: 130px;
+}
+
+.pagomet {
+    align-content: center;
+    
+    margin-left: 150px;
+    float: left;
+}
+
+.pagomet li{
+    text-align: left;
+}

@@ -1,0 +1,720 @@
+﻿@model IEnumerable<ANIMANIA.Models.CarritoItem>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <title>ANIMANIA</title>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Estilos Css -->
+    <style type="text/css">
+        * {
+            cursor: url(https://cur.cursors-4u.net/anime/ani-11/ani1033.cur), auto !important;
+        }
+    </style>
+    <a href="http://www.cursors-4u.com/cursor/2010/09/04/crossed-red-kunai-naruto.html" target="_blank" title="Crossed orange Kunai - Naruto"><img src="http://cur.cursors-4u.net/cursor.png" border="0" alt="Crossed Red Kunai - Naruto" style="position:absolute; top: 0px; right: 0px;" /></a>
+
+
+    <link rel="stylesheet" href="../css/normalize.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+
+    <script src="~/Scripts/alertify.js"></script>
+    <script src="~/Scripts/alertify.min.js"></script>
+    <link href="~/Scripts/alertify.css" rel="stylesheet" type="text/css" />
+    <link href="~/Scripts/alertify.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Scripts/default.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="../fontawesome-free-5.15.1-web/css/fontawesome.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.15.1-web/css/brands.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.15.1-web/css/regular.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.15.1-web/css/solid.css">
+    <link rel="stylesheet" href="../fontawesome-free-5.15.1-web/css/svg-with-js.css">
+    <link rel="stylesheet" href="~/Scripts/Styleinicio.css">
+    <link rel="stylesheet" href="~/Scripts/nosotros.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="~/Scripts/java.js"></script>
+
+
+
+    <style>
+
+        footer {
+            position: inherit;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .car {
+            border-radius: 50px;
+            margin-top: 100px;
+            padding: 40px;
+        }
+
+        .imag {
+            border-radius: 30px;
+        }
+
+            .imag img {
+                height: 500px;
+                width: 90%;
+            }
+
+        .detalle {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .site_body_details {
+            display: block;
+            position: relative;
+            width: 100%;
+            padding: 0px 20px;
+            margin-bottom: 55px;
+        }
+
+            .site_body_details .page-header-details {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: auto;
+                padding: 10px 0px;
+            }
+
+                .site_body_details .page-header-details .contenedor .page-header-leyenda {
+                    display: block;
+                    padding: 10px 0px;
+                    margin-bottom: 6px;
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+
+        .page-header-leyenda a {
+            color: #3d464d;
+        }
+
+            .page-header-leyenda a:nth-child(1) {
+                color: #cecece;
+            }
+
+        .page-header-title {
+            color: #3d464d;
+        }
+
+        .mid-details {
+            width: 100%;
+            position: relative;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            overflow-x: auto;
+        }
+
+        .content-details {
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .imagen-producto-details,
+        .details-producto {
+            flex: 50%;
+            width: 50%;
+            display: block;
+            position: relative;
+        }
+
+        .imagen-producto-details {
+            border: 2px solid #cecece;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .imagen-producto-details .easyzooms img {
+                width: 300px !important;
+                display: block;
+                height: 400px !important;
+            }
+
+        .details-producto {
+            display: flex;
+            flex-direction: column;
+            justify-content: right;
+            padding: 10px;
+            padding-left: 45px;
+            padding-right: 0;
+            padding-top: 0;
+        }
+
+        .nombre-Producto {
+            color: #3d464d;
+            font-size: 22px;
+            margin-bottom: 13px;
+        }
+
+        .descripcion-breve {
+            line-height: 25px;
+            font-size: 17px;
+            color: #3d464d;
+            margin-bottom: 5px;
+        }
+
+        .propiedades-producto {
+            display: block;
+            position: relative;
+            width: 100%;
+        }
+
+        .stock-producto-fecha .stock-pro,
+        .stock-producto-fecha .fecha-pro {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 19px;
+            color: #a3a3a3;
+            font-weight: 600;
+        }
+
+            .stock-producto-fecha .stock-pro span,
+            .stock-producto-fecha .fecha-pro span {
+                color: #3d464d;
+                font-weight: 600;
+            }
+
+        .precio-producto {
+            margin-bottom: 5px;
+        }
+
+            .precio-producto .details-pro span {
+                color: #3d464d;
+                font-weight: 600;
+                margin-bottom: 5px;
+                display: inline-block;
+                font-size: 28px;
+                padding: 5px 0px;
+            }
+
+        .botones-pro .title {
+            display: block;
+            font-size: 19px;
+            color: #a3a3a3;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .input-group {
+            display: flex;
+            padding: 5px 0px;
+        }
+
+            .input-group .input-group-prepend button,
+            .input-group .input-group-append button {
+                background-color: transparent;
+                color: #afacac;
+                border: 0;
+                cursor: pointer;
+                height: 70%;
+                transition: background-color ease 0.2s;
+                border: 1px solid #afacac;
+                border-right: none;
+                font-size: 25px;
+            }
+
+            .input-group .input-group-append button {
+                border-right: 1px solid #afacac;
+                border-left: none;
+            }
+
+                .input-group .input-group-prepend button:hover,
+                .input-group .input-group-append button:hover {
+                    color: #333333;
+                }
+
+            .input-group input[type="text"] {
+                width: 20px;
+                border: 0;
+                font-size: 30px;
+                color: #afacac;
+                border-top: 1px solid #afacac;
+                border-bottom: 1px solid #afacac;
+                height: 35px
+            }
+
+            .input-group .input-group-prepend button,
+            .input-group .input-group-append button,
+            .input-group input[type="text"] {
+                padding: 6px 0px;
+            }
+
+        .Añadir-carrito {
+            padding: 15px 20px;
+            font-size: 18px;
+            margin-top: 10px;
+            border: 0;
+            background-color: #ff6200;
+            color: #fff;
+            cursor: pointer;
+        }
+
+            .Añadir-carrito:hover {
+                background-color: #0d3d8a;
+            }
+
+        .detalle li {
+            margin-top: 1px;
+            border-color: black;
+            border-style: solid;
+            padding: 10px;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!--  ------------------------------Header de Inicio  ----------------------------------------->
+
+    <div class="container headerInicio">
+
+        <div class="header-nav container ">
+
+
+            <div class=" row ">
+
+                <div class="col-4">
+
+                    <h1><a href="##">ANIMANIA</a></h1>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="buscador d-flex">
+
+                            <input type="search" placeholder="Busqueda">
+                            <a href=""><i class="fa fa-2 fa-search"> </i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="btn-group ini">
+                        <i class="fa fa-user"></i>
+                        <button id="btnIncio" type="button" class="btn  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                            Iniciar Sesion
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="@Url.Action("InformacionPersonal","Cliente")">Mi Cuenta</a>
+
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="@Url.Action("CerrarSesion","LoginAdmin")">Cerrar Sesión</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-1">
+
+                    <div class="carrito">
+
+                        <a href="@Url.Action("Index","Carrito")"><span id="items" style="position:absolute;top:20px;right:30px;font-size:20px"></span><i class="fa fa-shopping-cart"></i></a>
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+        <div class="navbar container" id="navbar">
+            <nav class="d-flex align-items-center justify-content-between">
+                <ul>
+                    <li><a href="@Url.Action("listaOferta","Producto")"> <span>  Ofertas</a></span></li>
+                    <li><a href="@Url.Action("Index","Producto")"> <span>  Productos </a></span></li>
+                    <li><a id="admin" href="@Url.Action("Index","Admin")" style="display:none"> <span>  Admin</a></span></li>
+                    <li>
+                        <div class="dropdown">
+
+                            <button class="dropbtn">ANIMES/MANGA</button>
+
+                            <div id="img-anime" class="dropdown-content " style="background:url(../../img/gokuFigura.jpg) no-repeat center;background-size:contain;background-color:white">
+                                <ul id="links-anime">
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="@Url.Action("listaNovedad","Producto")"> <span>  Novedades </a></span></li>
+                    <li><a href="@Url.Action("listaReserva","Producto")"> <span>  Reservas </a></span></li>
+                    <li><a href="../inicio.html#nosotros"> <span>  Nosotros</a></span></li>
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+    <!-- -----------------------------------------------Producto imagen y carrito------------------------------------------>
+
+
+    <div class="container car   shadow ">
+
+        <div class="row">
+            <div class="col-md-8  container">
+                <span>Su carrito se actualizará en <span id="timer"></span></span>
+                <table class="table table-hover table-borderless">
+
+                    <thead>
+                        <tr>
+                            <th>Carrito de Compra</th>
+                        </tr>
+                    </thead>
+                    <tbody id="filas">
+
+                        @foreach (var item in Model) { 
+                        <tr>
+                            <td class="codProd">@item.idProducto</td>
+                            <td><img src="@Url.Content(item.imgProd)" width="50px" height="50px" /></td>
+                            <td><span>@item.desProd</span><br /><span id="preProd">@String.Format("{0:c}",@item.preProd)</span></td>
+                            <td>
+                                <div class="botones-pro" style="width:100%;height:50px">
+
+
+                                    <div class="input-group-prepend" style="display:inline-block">
+                                        <button style="min-width: 2.5rem" class="btn btn-decrement btn-outline-secondary btn-minus" type="button" onclick="Cantidad(this,-1)"><strong>−</strong></button>
+                                    </div>
+                                    <input type="text" inputmode="decimal" style="text-align: center;width:50px;display:inline-block" class="form-control cant" readonly value="@item.cantProd">
+                                    <div class="input-group-append" style="display:inline-block">
+                                        <button  style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary btn-plus mas" type="button" onclick="Cantidad(this,1)">
+                                            <strong>+</strong>
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>@String.Format("{0:c}",@item.subtotal())</td>
+                            <td><img onclick="EliminarItem(@item.idProducto)" src="~/img/no.png" style="width:30px;height:30px"/></td>
+                        </tr>
+                        }
+                    
+                    </tbody>
+
+                </table>
+            </div>
+
+
+
+
+            <div class="col-md-4 border border-info">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr class="border-bottom">
+                            <th>Hay @ViewBag.cant articulos en tu carrito</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-bottom">
+                            <td>Subtotal: @String.Format("{0:c}",ViewBag.sub)</td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <td>Delivery: @String.Format("{0:c}", ViewBag.delivery)</td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <td>Total: @String.Format("{0:c}", ViewBag.total)</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="form-control btn" href="@Url.Action("procesarCompra","Carrito")">Pasar a Caja</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--  -------------------------------------Footer o Pie de Pagina --------------------------------------->
+    <footer>
+
+        <div class=" footer">
+
+            <div class="row">
+                <div class="col redes">
+                    <h3 class="" style="color:white;"> Siguenos : </h3>
+
+                    <div class="list">
+
+                        <a href="#" style=" font-size: 30px;"><i class="fab fa-facebook-square face"></i></a>
+                        <a href="#" style=" font-size: 30px"><i class="fab fa-twitter-square twit"></i></a>
+                        <a href="#" style=" font-size: 30px"><i class="fab fa-instagram inst"></i></a>
+
+
+                    </div>
+
+                    <div>
+                        <h1 style="color: orange; font-size: 70px;">ANIMANIA</h1>
+
+                    </div>
+                </div>
+                <div class="col Inf">
+                    <h3> Informacion :</h3>
+                    <ul class="listainf">
+
+                        <li>
+                            <a href=""> Terminos y condiciones de Uso.</a>
+
+
+                        </li>
+
+                        <li>
+                            <a href=""> Pagos y envios.</a>
+
+                        </li>
+                        <li>
+                            <a href=""> Politica y privacidad.</a>
+
+                        </li>
+                        <li>
+                            <a href=""> Contactenos.</a>
+
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+
+
+                <div class="col">
+
+                    <h3> Pago Rapido y seguro :</h3>
+
+                    <div class="tar">
+
+                        <a href="#" style=" font-size: 30px;" class="pay"><i class="fab fa-paypal"></i></i></a>
+                        <a href="#" style=" font-size: 30px" class="cpay"><i class="fab fa-cc-paypal"></i></a>
+                        <a href="#" style=" font-size: 30px" class="cvisa"><i class="fab fa-cc-visa"></i></a>
+                        <a href="#" style=" font-size: 30px" class="cmast"><i class="fab fa-cc-mastercard"></i></a>
+                        <a href="#" style=" font-size: 30px" class="camex"><i class="fab fa-cc-amex"></i></a>
+
+
+                    </div>
+
+                    <div class="d-flex align-items-center correoes">
+
+                        <h4 style="color: orange; font-size:38px;"> ANIMANIA </h4><input type="email" placeholder="Tu correo aqui"><i class="fas fa-envelope"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+
+
+
+    <script>
+         window.onload = function ()
+        {
+            listarAnime();
+            Session();
+            items();
+
+        };
+
+      function ActualizarCarrito() {
+          var filas = $('#filas').find("tr");
+          var codigo = 0;
+          var cant = 0;
+          var pre = 0;
+            for (i = 0; i < filas.length; i++) {
+                var celdas = $(filas[i]).find("td");
+                codigo = $(celdas[0]).html();
+                cant = $(celdas[3]).closest("tr").find(".cant").val();
+                pre = $(celdas[2]).closest("tr").find("#preProd").html();
+                var json = @Html.Raw(Json.Encode(@HttpContext.Current.Session["login"]));
+
+                var prod =
+                {
+                   idUsuario: json["idUsu"],
+                   idProducto: codigo,
+                   preProd: pre,
+                   cantProd: cant
+                };
+
+
+             $.ajax({
+                type: "POST",
+                dataType: "JSON",
+                url: '@Url.Action("actualizarItemCarrito", "Carrito")',
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(prod),
+
+                 success: function (response) {
+
+                },
+                error: function (response) {
+                    alert("error");
+                }
+             });
+                
+          }
+          alertify.success('Carrito Actualizado');
+          location.href = '@Url.Action("Index","Carrito")';
+        }
+
+
+
+        var x = null;
+
+        function Time() {
+            var cont = 10;
+
+            x = setInterval(function () {
+
+                cont = --cont <= -1 ? 10 : cont;
+                $('#timer').html(cont);
+                if (cont == 0) {
+                    clearInterval(x);
+                    ActualizarCarrito();
+                }
+            }, 1000);
+        }
+
+        function regresarAproductos() {
+            location.href = '@Url.Action("Index","Producto")';
+        }
+
+        function Session() {
+            var asignaciones = '@Session["asignaciones"]';
+            var json = @Html.Raw(Json.Encode(@HttpContext.Current.Session["login"]));
+            $('#btnIncio').html(json["nomCliEmp"]);
+            
+            if (asignaciones != '') {
+            $('#admin').css('display', 'block');
+            }
+        }
+
+        function listarAnime() {
+            $.ajax({
+                type: "GET",
+                dataType: "JSON",
+                url: '@Url.Action("listaProdAnime", "Producto")',
+                contentType: "application/json; charset=utf-8",
+                data: {},
+                success: function (response) {
+                    for (x of response) {
+                        $('#links-anime').append("<li><a onmouseover='Imagen("+x.idAnime+")' href='@Url.Action("listaxAnime", "Producto")?codigo="+x.idAnime+"'>" + x.nomAnime + "</a></li>");
+                    }
+
+                },
+                error: function (response) {
+                    alert("error");
+                }
+             });
+        }
+
+        function Imagen(codigo) {
+            $.ajax({
+                type: "GET",
+                dataType: "JSON",
+                url: '@Url.Action("listaProdAnimeImg", "Producto")',
+                contentType: "application/json; charset=utf-8",
+                data: { codigo: codigo },
+                success: function (response) {
+                    $('#img-anime').css('background-image', 'url('+response+')');
+                },
+                error: function (response) {
+                    alert("error");
+                }
+             });
+
+        }
+
+        function items() {
+            var item = '@Session["items"]'
+            $('#items').html(item);
+        }
+
+
+        function Cantidad(a, cant) {
+            var input = $(a).closest("tr").find(".cant");
+            input.val(+input.val() + cant);
+            clearInterval(x);
+            Time();
+        }
+
+        function EliminarItem(cod) {
+            var json = @Html.Raw(Json.Encode(@HttpContext.Current.Session["login"]));
+            var prod = cod;
+             $.ajax({
+                type: "GET",
+                dataType: "JSON",
+                url: '@Url.Action("eliminarCarritoItem", "Carrito")',
+                contentType: "application/json; charset=utf-8",
+                 data: { usu: json["idUsu"], prod: prod },
+                 success: function (response) {
+                     if (response == 0) {
+                         setTimeout(regresarAproductos, 2000);
+                         var msg = alertify.message('Default message');
+                         msg.delay(5).setContent('¡Uy! Parece que tu carrito se quedo vacío... Regresando a la página principal');    
+                     } else {
+                         location.href = '@Url.Action("Index","Carrito")';
+                     }
+
+                },
+                 error: function (response) {
+                     alert("error" + response);
+                }
+             });
+        }
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="~/Scripts/java.js"></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/Scripts/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/Content/jquery.dataTables.min.js"></script>
+    <script src="~/Content/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Content/datatables-demo.js"></script>
+
+</body>
+</html>

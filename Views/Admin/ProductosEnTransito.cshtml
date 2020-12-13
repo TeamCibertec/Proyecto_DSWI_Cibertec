@@ -1,0 +1,718 @@
+﻿@model IEnumerable<ANIMANIA.Models.Producto>
+
+@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Tables</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom fonts for this template -->
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <script src="~/Scripts/alertify.js"></script>
+    <script src="~/Scripts/alertify.min.js"></script>
+    <link href="~/Scripts/alertify.css" rel="stylesheet" type="text/css" />
+    <link href="~/Scripts/alertify.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Scripts/default.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom styles for this template -->
+    <link href="~/Content/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="~/Content/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <style type="text/css">
+        * {
+            cursor: url(https://cur.cursors-4u.net/anime/ani-11/ani1033.cur), auto !important;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+
+
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-text mx-3">Administrador</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Módulo de Compras
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index","OrdenCompraAdmin")">
+                    <span>Órdenes de Compra</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index","OrdenDespachoAdmin")">
+                    <span>Órdenes de Despacho</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index","Orden_Compra_Proveedor")">
+                    <span>Órdenes de Compra Proveedores</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("DespachoSucursal","OrdenDespachoAdmin")">
+                    <span>Despacho Sucursal</span>
+                </a>
+            </li>
+
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Módulo de Recursos Humanos
+            </div>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index","EmpleadoAdmin")">
+                    <span>Registro de Empleados</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Contratos","EmpleadoAdmin")">
+                    <span>Contratos</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Consola de Seguridad
+            </div>
+
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index","UsuarioAdmin")">
+                    <span>Seguridad</span>
+                </a>
+            </li>
+
+
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Módulo de Inventario y Productos
+            </div>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="@Url.Action("Index","Admin")">
+                    <span>Producto</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index","Admin")">
+                    <span>Productos en Tránsito</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index","OrdenRecepcion")">
+                    <span>Orden de Recepción</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+        </ul>
+        <!-- End of Sidebar -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
+
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fa fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!-- Counter - Messages -->
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Message Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                            </div>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Productos en Tránsito</h1>
+                    <p class="mb-4"></p>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Listado de Productos</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>@Html.DisplayNameFor(model => model.codProd)</th>
+                                            <th>@Html.DisplayNameFor(model => model.desCate)</th>
+                                            <th>@Html.DisplayNameFor(model => model.desProv)</th>
+                                            <th>@Html.DisplayNameFor(model => model.desProducto)</th>
+                                            <th>@Html.DisplayNameFor(model => model.preProducto)</th>
+                                            <th>@Html.DisplayNameFor(model => model.dsctoProd)</th>
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td><input data-toggle="modal" data-target="#exampleModal" onclick="Obtener(@item.codProd)" type="text" style="border:none;color:blue;cursor:pointer" readonly value="@Html.DisplayFor(modelItem => item.codProd)" /></td>
+
+                                                <td>@Html.DisplayFor(modelItem => item.desCate)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.desProv)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.desProducto)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.preProducto)</td>
+                                                <td>@Html.DisplayFor(modelItem => item.dsctoProd)</td>
+                                                @if (item.estProd == 0)
+                                                {
+                                                    <td><input type="image" onclick="ActualizarEstado(@item.codProd,1)" src="~/img/flecha-arriba.png" /></td>
+                                                }
+                                                else
+                                                {
+                                                    <td><input type="image" onclick="ActualizarEstado(@item.codProd,0)" src="~/img/flecha-hacia-abajo.png" /></td>
+                                                }
+
+
+                                                
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--INICIO DEL MODAL-->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Productos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col" id="hideoncreate">
+                                <label for="codigo" class="col-form-label">Codigo del Producto:</label>
+                                <input type="text" class="form-control" id="codigo" value="@ViewBag.count" readonly>
+                            </div>
+                            <div class="col">
+                                <label for="proveedor" class="col-form-label">Proveedor</label>
+                                @Html.DropDownList("codProv", (SelectList)ViewBag.listaprov, new { @class = "form-control", @id = "codProv" })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="categoria" class="col-form-label">Categoria</label>
+                                @Html.DropDownList("codCate", (SelectList)ViewBag.listacate, new { @class = "form-control", @id = "codCate" })
+                            </div>
+                            <div class="col">
+                                <label for="descripcion" class="col-form-label">Descripcion</label>
+                                <input type="text" class="form-control" id="descripcion">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="precio" class="col-form-label">Precio</label>
+                                <input type="text" class="form-control" id="precio">
+                            </div>
+                            <div class="col">
+                                <label for="descuento" class="col-form-label">Descuento</label>
+                                <input type="text" class="form-control" id="descuento">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="imgprod" class="col-form-label">Imagen Producto</label>
+                                <input type="file" class="form-control" id="imgprod">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <input id="btnCreate" onclick="AñadirImagen()" type="button" class="btn btn-primary" style="display:none" />
+                    <input id="btnSubmit" onclick="Actualizar()" type="button" class="btn btn-primary" style="display:none" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--FIN DEL MODAL-->
+
+    <script type="text/javascript">
+
+        var img_prod = "";
+
+        function ActualizarEstado(cod, estado) {
+            var id = cod;
+            var estprod = estado;
+            $.ajax({
+                type: "GET",
+                dataType: "JSON",
+                url: '@Url.Action("actualizarEstado", "Admin")',
+                contentType: "application/json; charset=utf-8",
+                data: { codigo: id, estado: estprod },
+                success: function (response) {
+                    if (estprod == 0)
+                         alertify.confirm("El producto " + id + " fue dado de alta", function () { location.reload() });
+                    else
+                         alertify.confirm("El producto " + id + " fue dado de baja", function () { location.reload() });
+                },
+                error: function (response) {
+                    alert("error");
+                }
+             });
+
+        }
+
+
+        function Obtener(cod) {
+            var id = cod;
+            $('#btnSubmit').attr('value', 'Guardar').css('display', 'block');
+            $('#btnCreate').css('display', 'none');
+            $('#codCate').selectedIndex = 2;
+            $.ajax({
+                type: "GET",
+                dataType: "JSON",
+       url: '@Url.Action("obtenerProducto", "Admin")',
+       contentType: "application/json; charset=utf-8",
+       data: { parametro: id},
+
+                success: function (response) {
+                    jQuery('#codProv').val(response.codProv);
+                    jQuery('#codCate').val(response.codCate);
+                    $('#codigo').attr('value', response.codProd);
+                    $('#proveedor').attr('value', response.desProv);
+                    $('#categoria').attr('value', response.desCate);
+                    $('#descripcion').attr('value', response.desProducto);
+                    $('#precio').attr('value', response.preProducto);
+                    $('#descuento').attr('value', response.dsctoProd);
+                    $('#a').attr('data-toggle', 'modal');
+                    $('#a').attr('data-target', '#exampleModal');
+                    img_prod = response.imgProd;
+                },
+                error: function (response) {
+                    alert("error");
+                }
+          });
+        }
+
+        function AñadirImagen() {
+            var file_data = $("#imgprod").prop("files")[0];
+            var form_data = new FormData();
+            form_data.append("file", file_data);
+            $.ajax({
+                url: '@Url.Action("imagen", "Admin")',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: form_data,
+                type: 'post',
+                success: function (result) {
+                    if (result.success == true) { Actualizar(); }
+                    else { alert("fail!"); }
+                },
+            })
+        }
+
+        function Añadir() {
+
+            var img_file = $('#imgprod').val().substring($('#imgprod').val().lastIndexOf('\\') + 1);
+            var prod =
+            {
+                codCate : $('#codCate').val(),
+                codProv : $('#codProv').val(),
+                desProducto : $('#descripcion').val(),
+                preProducto : $('#precio').val(),
+                dsctoProd: $('#descuento').val(),
+                imgProd: img_file
+            };
+
+             $.ajax({
+                type: "POST",
+                dataType: "JSON",
+                url: '@Url.Action("insertarProducto", "Admin")',
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(prod),
+
+                success: function (response) {
+                    location.reload();
+
+                },
+                error: function (response) {
+                    alert("error");
+                }
+             });
+
+        }
+
+         function Actualizar() {
+             var img_file = $('#imgprod').val().substring($('#imgprod').val().lastIndexOf('\\') + 1);
+             if (img_file === '') {
+                 img_file = img_prod;
+             }
+
+            var prod =
+            {
+                codProd: $('#codigo').val(),
+                codCate : $('#codCate').val(),
+                codProv : $('#codProv').val(),
+                desProducto : $('#descripcion').val(),
+                preProducto : $('#precio').val(),
+                dsctoProd: $('#descuento').val(),
+                imgProd: img_file
+            };
+
+             $.ajax({
+                type: "POST",
+                dataType: "JSON",
+                url: '@Url.Action("actualizarProducto", "Admin")',
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(prod),
+
+                 success: function (response) {
+                     alertify.confirm("El producto " + $('#codigo').val() + " fue actualizado con éxito", function () { location.reload() });
+                },
+                error: function (response) {
+                    alert("error");
+                }
+             });
+        }
+
+        function Elimina(cod) {
+
+            var id = cod;
+            $.ajax({
+                type: "GET",
+                dataType: "JSON",
+       url: '@Url.Action("eliminaProducto", "Admin")',
+       contentType: "application/json; charset=utf-8",
+       data: { codigo: id},
+
+                success: function (response) {
+
+                    location.reload();
+
+                },
+                error: function (response) {
+                    alert("Error");
+                }
+          });
+        }
+
+        function LimpiarCajas()
+        {
+            $('#btnCreate').attr('value', 'Crear').css('display', 'block');
+            $('#btnSubmit').css('display', 'none');
+
+            $('#descripcion').attr('value', '');
+            $('#precio').attr('value', '');
+            $('#descuento').attr('value', '');
+            $('#codigo').attr('value',@ViewBag.count);
+        }
+
+    </script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/Content/jquery.min.js"></script>
+    <script src="~/Content/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/Content/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/Content/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/Content/jquery.dataTables.min.js"></script>
+    <script src="~/Content/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/Content/datatables-demo.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+.cuen{
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    width: 70%;
+    
+   
+   margin-top: 79px;
+
+   border-radius:40px ;
+   align-content: center;
+   padding: 30px;
+    
+}
+
+.cuenta{
+
+    background-color: rgba(233, 111, 12, 0.836);
+
+    width: 100%;
+    height: 430px;
+    display: block;
+    border-radius: 50px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    padding: 0px;
+
+}
+
+.cuentah1{
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    background-color: white;
+    color: orange;
+    border-radius: 40px 40px 0px 0px;
+    
+}
+.cuentah1 h1{
+    font-size: 70px;
+}
+
+.listacuen{
+
+    color: white;
+
+  
+}
+.listacuen li {
+
+    color: white;
+    list-style: none;
+    font-size: 25px;
+    padding: none;
+    
+  
+}
+
+.listacuen li a{
+    color: white;
+    text-decoration: none;
+}
+
+.listacuen li a:hover {
+
+    color: rgba(243, 168, 82, 0.856);
+}

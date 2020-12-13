@@ -1,0 +1,629 @@
+*{
+   
+    font-family: 'Teko', sans-serif;
+    
+}
+body{
+/*background-image:url(../Imagenes/backgroundanime.jpg);
+background-attachment: fixed;*/
+
+
+background-color: white;
+
+}
+
+
+/*ESTILO DEL HEADER */
+
+.headerInicio {
+    background-color: white;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100px;
+    
+    padding: 0px;
+    
+    
+
+}
+
+.headerInicio h1 a{
+   
+   
+    
+    color: #FF9900;
+    
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 120px;
+    text-align: center;
+    text-decoration: none;
+
+    
+
+}    
+
+.headerInicio h1 a:hover{
+   
+    color: rgb(255, 174, 0);
+    
+}
+
+
+
+
+
+
+.buscador input{
+    
+ z-index: 1;
+    width: 300px;
+  margin-top: 25px;
+    background: #F0E9DE;
+    border-radius: 50px;
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    height: 40px;
+
+}
+.buscador i{
+    
+   margin-top: 28px;
+    z-index: 10;
+    font-size: 35px;
+    background-image: orange;
+}
+.buscador a{
+    color: #FF9900;
+}
+
+.buscador input:hover{
+    border: 2px ;
+    background-color: rgb(182, 179, 179);
+}
+.buscador input:in-range{
+    text-align: center;
+}
+
+.buscador input:placeholder-shown{
+    color: black;
+    font-size: 30px;
+   
+}
+.ini{
+    background-color: orange;
+    margin-top: 30px;
+    border-radius: 50px;
+    padding: 6px;
+    
+}
+.ini i{
+    font-size: 30px;
+    padding: 3px;
+    color: white;
+}
+.ini button{
+    color: white;
+    border-radius:20px ;
+}
+.ini a{
+color: black;
+height: 70px;
+font-size: 25px;
+text-decoration: none;
+
+}
+.ini a:hover{
+color: white;
+background-color: orange;
+}
+
+.carrito{
+margin-top:25px ;
+}
+.carrito a{
+
+font-size: 40px;
+text-decoration: none;
+color:  #FF9900;
+}
+.carrito a:hover {
+transform: rotate();
+    color: #ffc977 ;
+}
+/* ----------------- NavBar Container ---------------------*/
+.navbar{
+    
+    width: auto;
+    text-align: center;
+    height: 70px;
+    width: 100%;
+    border-radius: 0px 0px 50px 50px;
+   
+    top: 95px;
+    background-color:#FF9900;
+    position: fixed;
+    transition: top 0.3s;
+
+z-index: 11;
+
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+
+}
+.navbar ul {
+    text-align: center;
+}
+.navbar li{
+    display: inline;
+float: left;
+width: 165px;
+}
+.navbar li:hover{
+   
+    text-align: center;
+    background-attachment: fixed;
+    background-color: white;
+    
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+    transition: 0.3s;
+    transform: scale(1.15);
+    
+}
+
+.navbar a{
+    display: block;
+    
+    text-align: center;
+    color: white;
+text-decoration: none;
+font-size: 28px;
+transition: 0.3s;
+
+
+}
+.navbar a:hover{
+    color: orange;
+}
+.dropbtn {
+    background-color: #FF9900;
+    color: white;
+    
+    font-size: 28px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 900px;
+    height: 450px;
+    align-content: center;
+    transition: 1.0s;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    font-size: 16px;
+  }
+  
+  .dropdown-content a:hover {
+    transition: 0.3s;
+
+}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    align-content: center;
+    transition: 1.0s;
+    left: -300px;
+    border-radius: 20px;
+  }
+  
+  .dropdown:hover .dropbtn {
+   background-color: white;
+   color: orange;
+  }
+
+  .dropdown-content li:hover{
+      transform: none;
+      box-shadow: none;
+      border-radius: none;
+      transition: 0.3s;
+
+  }
+
+
+
+
+/*----------------------Carrousel------------------------------------------------------------------*/
+
+
+.carrousel{
+    
+position: relative;
+background-color: white;
+height: 820px;
+width:85%;
+max-width: 100%;
+display: block;
+align-content: center;
+margin-top: 90px;
+margin-bottom: 59px;
+padding-top: 0px;
+padding-left: 0px;
+padding-bottom: 0px;
+padding-right: 0px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+border-radius: 50px;
+
+}
+
+.carousel{
+   height: 820px;
+  
+padding-top: 0px;
+padding-left: 0px;
+padding-bottom: 0px;
+padding-right: 0px;
+z-index: 1;
+border-radius: 50px;
+
+   }
+   
+   .carousel img{
+       height: 790px;  
+       padding-top: 0px;
+padding-left: 0px;
+padding-bottom: 0px;
+padding-right: 0px;
+border-radius: 50px;
+
+      
+   }
+
+   .carousel h1{
+    text-align: center;
+    font-size: 100px;
+    font-family: 'Teko', sans-serif;
+
+   }
+   .carousel h1 strong{
+
+    font-size: 150px;
+    color: orange
+   }
+   
+
+
+   /* ----------------------------------- Divisiones de las Paginas -------------------------------*/
+
+.divisionPag{
+    background-color:  rgba(255, 255, 255, 0);
+    width:85%;
+    max-width: 100%;
+   
+   
+    height: auto;
+   text-align: center; 
+  
+   margin-top: 10px;
+   left: 355px;
+   border-radius: 50px;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+   
+}
+.nav{
+    width: 100%;
+    background-color:orange;
+    text-align: center;
+    border-radius: 50px;
+    border-color: none;
+    
+}
+.nav a{
+
+   
+    color: white;
+    font-size: 30px;
+    width:506px;
+    padding: 8px 70px;
+    
+    
+}
+.nav a:hover{
+    border: none;
+    margin: 0px;
+   
+}
+
+
+.tab-content{
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+}
+
+
+
+/*--------------------------------Card de Productos----------------------------------------*/
+
+.card.group{
+    height:100%;
+    max-width: 100%;
+    
+}
+.card {
+    margin: 30px 20px ;
+    border: none;
+    transition: 0.3s;
+    
+}
+.nav-link.active{
+    border-radius: 50px 50px;
+    box-shadow: none;
+    border-color: none;
+}
+.nav-link  a:hover{
+    border:none
+}
+.nav-tabs:hover{
+    border: none;
+}
+.divisionPag nav{
+    background:none;
+    border: none;
+    box-shadow: none;
+}
+.divisionPag nav:hover{
+    border: none;
+}
+
+.card:hover {
+    transition: 0.4s;
+    
+    border: none;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.0), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+.card img{
+    height: 350px;
+    transition: 0.3s;
+    transform: scale(0.8);
+    opacity: 1.0;
+    border: none;
+
+}
+
+.card img:hover{
+    transition: 0.3s ease-in;
+    
+    transform: scale(1.0);
+    border: none;
+    
+
+}
+.card{
+    border-radius: 50px ;
+}
+
+.card-body{
+    width: 100%;
+    max-width: 100%;
+  
+}
+
+  
+.card-body a{
+    background-color: orange; color: white;
+}
+.card-body a:hover{
+    
+   color:orange;
+   background-color: white;
+  transform: scale(1.5);
+  transition: 0.5s;
+}
+
+.contenedor_navegacion {
+    width: 100%;
+    padding: 20px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+  }
+  .contenedor_navegacion .lista_navegacion {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  .contenedor_navegacion .lista_navegacion li {
+    margin: 0px 4px;
+    cursor: pointer;
+  }
+  .contenedor_navegacion .lista_navegacion li a {
+    color: #1b1a18a8;
+    padding: 13px;
+    font-weight: 700;
+  }
+  .contenedor_navegacion .lista_navegacion li .number_nave:hover,
+  .contenedor_navegacion .lista_navegacion li .direccion:hover {
+    background-color: #e7e7eb;
+  }
+  .contenedor_navegacion .lista_navegacion .active_pag {
+    background-color: #ffaf01;
+    color: #e7e7eb;
+  }
+
+
+  /* ---------------------------------------------- Nosotros- ------------------------------------------------------*/
+
+    
+  .nosotros {
+     background-color: white;
+      color: white;
+      border-radius: 50px;
+      padding: 30px;
+      width: 85%;
+      max-width: 100%;
+
+      text-align: center;
+      height: 100%;
+  }
+  .nosotros h1{
+      font-size: 100px;
+      color: #FF9900;
+      text-shadow:  0 0 2px#FF9900, 0 0 8px white;
+  }
+.nosotros p{
+
+    color: white;
+    font-size:35px;
+    padding: 40px;
+
+}
+.noso{
+    background-color: rgba(51, 51, 51, 0.5);
+    margin: 20px;
+}
+.noso h1{
+    color: white;
+    font-size: 55px;
+    text-shadow: none;
+}
+.colab{
+    height: auto;
+}
+.colab img{
+    margin-top: 10px;
+    height: 200px;
+}
+
+
+
+
+
+   /*----------Footer (Pide de pagina)-------------------------------------*/
+
+  
+   footer{
+background-color: rgba(3, 3, 3, 0.808);
+height: auto;
+margin-top: 10px;
+top: 1350px;
+color: white;
+
+   }
+
+footer .footer{
+    padding: 20px;
+}
+
+
+
+ footer .face  {
+color:white;
+margin: 0px 5px;
+transform: scale(1.4);
+}
+footer .face:hover {
+    color:orange;
+    transform: scale(1.0);
+    transition: 0.3s;
+    
+    }
+
+footer .twit {
+    color:white;
+    margin: 0px 5px;
+    transform: scale(1.4);
+    }
+    footer .twit:hover {
+        color:orange;
+        transform: scale(1.0);
+    transition: 0.3s;
+        }
+
+    footer .inst {
+        color:white;
+        margin: 0px 5px;
+        transform: scale(1.4);
+        transition: 0.3s;
+        }
+        footer .inst:hover {
+            color:orange;
+            transform: scale(1.0);
+    transition: 0.3s;
+            }
+        
+footer .inf{
+    color: white;
+}
+ 
+footer .listainf {
+    list-style: square;
+    
+}
+footer .listainf li:hover{
+    color: orange;
+    transition: 0.3s;
+}
+
+footer  .listainf a{
+    text-decoration: none;
+    color: white;
+font-size: 18px;
+}
+
+footer  .listainf a:hover{
+    color: orange;
+  transition: 0.3s;
+    
+    
+}
+
+footer .tar a{
+padding: 5px;
+color: white;
+}
+
+footer .correoes {
+    padding: 10px;
+    width: 300px;
+    margin-top: 10px;
+    align-content: center;
+}
+
+footer .correoes h4{
+    width: 200px;
+    height: 39px;
+    padding: 5px;
+}
+footer .correos input{
+width: 100px;
+align-content: center;
+height: auto;
+}
+footer .correoes i{
+    color: rgba(202, 131, 0, 0.966);
+    font-size: 40px;
+}
+
+

@@ -1,0 +1,25 @@
+.headerInicio h1 a{
+    color: #FF9900;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height:77px;
+    text-align: center;
+    text-decoration: none;
+
+    
+
+} 
+
+.navbar{
+    height: 70px;
+    padding-top: 15px;
+}
+
+.navbar a:hover{
+   border-radius: 50px;
+}
+
+.divisionPag{
+    margin-top: 5%;
+}

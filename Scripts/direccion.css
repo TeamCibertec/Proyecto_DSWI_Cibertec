@@ -1,0 +1,15 @@
+table{
+
+padding: 10px;
+display: block;
+}
+
+.btn{
+   border: none;
+    background-color: orange;
+}
+
+.direct{
+    align-content: center;
+    text-align: center;
+}
